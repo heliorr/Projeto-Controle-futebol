@@ -1,4 +1,5 @@
 import * as express from 'express';
+import usersRoute from './routes/Users';
 
 class App {
   public app: express.Express;
@@ -8,13 +9,14 @@ class App {
 
     this.config();
 
-    // Não remover essa rot
+    // Não remover essa rota
     this.app.get('/', (req, res) => res.json({ ok: true }));
+    this.app.use('/login', usersRoute);
   }
 
   private config():void {
     const accessControl: express.RequestHandler = (_req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Origcode .in', '*');
       res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,OPTIONS,PUT,PATCH');
       res.header('Access-Control-Allow-Headers', '*');
       next();

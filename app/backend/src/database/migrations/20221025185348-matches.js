@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      homeTeam: {
+      home_team: {
         type: Sequelize.INTEGER,
         allowNull: false,
         field: 'home_team',
@@ -18,12 +18,12 @@ module.exports = {
           key: 'id',
         }
       },
-      homeTeamGoals: {
+      home_team_goals: {
         type: Sequelize.INTEGER,
         allowNull: false,
         field: 'home_team_goals',
       },
-      awayTeam: {
+      away_team: {
         type: Sequelize.INTEGER,
         allowNull: false,
         field: 'away_team',
@@ -32,12 +32,12 @@ module.exports = {
           key: 'id',
         }
       },
-      awayTeamGoals: {
+      away_team_goals: {
         type: Sequelize.INTEGER,
         allowNull: false,
         field: 'away_team_goals',
       },
-      inProgress: {
+      in_progress: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
         field: 'in_progress',
