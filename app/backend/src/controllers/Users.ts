@@ -32,6 +32,6 @@ export default class UsersController {
     if (decoded) {
       return { code: 200, message: 'role', value: decoded.role };
     }
-    return { code: 401, message: 'message', value: 'Token must be a valid token' };
+    return { code: 401, message: 'error', value: 'Token must be a valid token' };
   };
 }
