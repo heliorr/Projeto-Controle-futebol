@@ -1,7 +1,7 @@
-import * as Router from 'express';
+import * as express from 'express';
 import UsersController from '../controllers/Users';
 
-const router = Router();
+const router = express.Router();
 const usersController = new UsersController();
 
 router.post('/', async (req, res) => {

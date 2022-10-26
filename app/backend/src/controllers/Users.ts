@@ -18,7 +18,8 @@ export default class UsersController {
       comparePassword = bcrypt.compareSync(password, result.password);
       if (comparePassword) {
         const jwt = new JWT();
-        const token = jwt.encode(result);
+        const token = jwt.encode({
+          username: result.username, email: result.email });
         return { code: 200, message: 'token', value: token };
       }
     }
