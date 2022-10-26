@@ -4,7 +4,7 @@ export interface ILogin {
   username: string;
   email: string;
   password: string;
-  role?: string;
+  role: string;
 }
 
 export default class UsersService {
