@@ -1,6 +1,7 @@
 import * as express from 'express';
 import usersRoute from './routes/Users';
 import teamsRoute from './routes/Teams';
+import matchesRoute from './routes/Matches';
 
 class App {
   public app: express.Express;
@@ -14,6 +15,7 @@ class App {
     this.app.get('/', (req, res) => res.json({ ok: true }));
     this.app.use('/login', usersRoute);
     this.app.use('/teams', teamsRoute);
+    this.app.use('/matches', matchesRoute);
   }
 
   private config():void {

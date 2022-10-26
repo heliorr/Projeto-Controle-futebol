@@ -5,7 +5,7 @@ export interface ITeams {
   teamName: string;
 }
 
-export default class UsersService {
+export default class TeamsService {
   private teams = Teams;
 
   public findallTeams = async (): Promise<ITeams[]> => {
