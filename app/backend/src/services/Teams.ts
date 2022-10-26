@@ -12,4 +12,9 @@ export default class UsersService {
     const teams = await this.teams.findAll();
     return teams;
   };
+
+  public findTeam = async (id: string): Promise<ITeams | null > => {
+    const teams = await this.teams.findOne({ where: { id } });
+    return teams;
+  };
 }

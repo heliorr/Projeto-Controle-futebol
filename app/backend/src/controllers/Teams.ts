@@ -12,4 +12,9 @@ export default class TeamsController {
     const result = await this._TeamsService.findallTeams();
     return { code: 200, value: result };
   };
+
+  public findTeam = async (id: string) => {
+    const result = await this._TeamsService.findTeam(id);
+    return { code: 200, value: result };
+  };
 }
