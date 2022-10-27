@@ -25,7 +25,7 @@ export const decode = (key: string | undefined) => {
 };
 
 export const valitadeToken = (req: Request, res: Response, next: NextFunction) => {
-  const key = req.header('Authorization');
+  const key = req.header('authorization');
   if (!key) {
     return res.status(401).json({ message: 'Token must be a valid token' });
   }
