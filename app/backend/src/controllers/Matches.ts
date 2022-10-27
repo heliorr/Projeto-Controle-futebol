@@ -27,4 +27,10 @@ export default class matchesController {
     );
     return { code: 201, value: result };
   };
+
+  public updateMatche = async (
+    id: number,
+  ) => {
+    await this._MatchesService.updateMatche(id);
+  };
 }

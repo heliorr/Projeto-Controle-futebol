@@ -34,4 +34,12 @@ router.post('/', valitadeToken, async (req, res) => {
   res.status(code).json(value);
 });
 
+router.put('/:id', valitadeToken, async (req, res) => {
+  const {
+    id,
+  } = req.params;
+  await matchesController.updateMatche(+(id));
+  res.status(201).json({ message: 'Finished' });
+});
+
 export default router;

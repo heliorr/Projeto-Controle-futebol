@@ -45,4 +45,10 @@ export default class MatchesService {
     });
     return result;
   };
+
+  public updateMatche = async (
+    id: number,
+  ): Promise<void> => {
+    await this.matches.update({ inProgress: false }, { where: { id } });
+  };
 }
