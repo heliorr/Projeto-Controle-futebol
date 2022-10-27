@@ -33,4 +33,16 @@ export default class MatchesService {
     });
     return result;
   };
+
+  public insertMatche = async (
+    homeTeam: number,
+    awayTeam: number,
+    homeTeamGoals: number,
+    awayTeamGoals: number,
+  ): Promise<IMatches> => {
+    const result = await this.matches.create({
+      homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress: true,
+    });
+    return result;
+  };
 }
