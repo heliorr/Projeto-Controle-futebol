@@ -22,4 +22,15 @@ export default class MatchesService {
     });
     return result;
   };
+
+  public filterAllMatches = async (inProgress: boolean): Promise<IMatches[]> => {
+    const result = await this.matches.findAll({
+      where: { inProgress },
+      include: [
+        { model: Teams, as: 'teamHome', attributes: { exclude: ['id'] } },
+        { model: Teams, as: 'teamAway', attributes: { exclude: ['id'] } },
+      ],
+    });
+    return result;
+  };
 }

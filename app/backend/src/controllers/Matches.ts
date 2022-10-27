@@ -7,4 +7,9 @@ export default class matchesController {
     const result = await this._MatchesService.findallMatches();
     return { code: 200, value: result };
   };
+
+  public filterAllMatches = async (inProgress: boolean) => {
+    const result = await this._MatchesService.filterAllMatches(inProgress);
+    return { code: 200, value: result };
+  };
 }
