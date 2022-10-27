@@ -27,12 +27,12 @@ export const decode = (key: string | undefined) => {
 export const valitadeToken = (req: Request, res: Response, next: NextFunction) => {
   const key = req.header('Authorization');
   if (!key) {
-    return res.status(401).json({ error: 'Token must be a valid token' });
+    return res.status(401).json({ message: 'Token must be a valid token' });
   }
   try {
     jwt.verify(key, secret);
   } catch (e) {
-    return res.status(401).json({ error: 'Token must be a valid token' });
+    return res.status(401).json({ message: 'Token must be a valid token' });
   }
   next();
 };
