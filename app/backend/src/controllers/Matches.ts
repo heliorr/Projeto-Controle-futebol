@@ -30,7 +30,15 @@ export default class matchesController {
 
   public updateMatche = async (
     id: number,
+    homeTeamGoals: number,
+    awayTeamGoals: number,
   ) => {
-    await this._MatchesService.updateMatche(id);
+    await this._MatchesService.updateMatche(id, homeTeamGoals, awayTeamGoals);
+  };
+
+  public finishMatche = async (
+    id: number,
+  ) => {
+    await this._MatchesService.finishMatche(id);
   };
 }

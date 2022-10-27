@@ -46,9 +46,17 @@ export default class MatchesService {
     return result;
   };
 
-  public updateMatche = async (
+  public finishMatche = async (
     id: number,
   ): Promise<void> => {
     await this.matches.update({ inProgress: false }, { where: { id } });
+  };
+
+  public updateMatche = async (
+    id: number,
+    homeTeamGoals: number,
+    awayTeamGoals: number,
+  ): Promise<void> => {
+    await this.matches.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
   };
 }

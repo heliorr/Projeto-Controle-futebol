@@ -38,7 +38,16 @@ router.put('/:id', valitadeToken, async (req, res) => {
   const {
     id,
   } = req.params;
-  await matchesController.updateMatche(+(id));
+  const { homeTeamGoals, awayTeamGoals } = req.body;
+  await matchesController.updateMatche(+(id), homeTeamGoals, awayTeamGoals);
+  res.status(200).json({ message: 'edited' });
+});
+
+router.patch('/:id/finish', valitadeToken, async (req, res) => {
+  const {
+    id,
+  } = req.params;
+  await matchesController.finishMatche(+(id));
   res.status(201).json({ message: 'Finished' });
 });
 
