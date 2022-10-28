@@ -1,6 +1,7 @@
 import * as express from 'express';
 import MatchesController from '../controllers/Matches';
 import { valitadeToken } from '../utils/JWT';
+import valitade from '../utils/Validate';
 
 const router = express.Router();
 const matchesController = new MatchesController();
@@ -18,7 +19,7 @@ router.get('/', async (req, res) => {
   return true;
 });
 
-router.post('/', valitadeToken, async (req, res) => {
+router.post('/', valitadeToken, valitade.valitadeMatch, valitade.valitadeTeam, async (req, res) => {
   const {
     homeTeam,
     awayTeam,
@@ -48,7 +49,7 @@ router.patch('/:id/finish', valitadeToken, async (req, res) => {
     id,
   } = req.params;
   await matchesController.finishMatche(+(id));
-  res.status(201).json({ message: 'Finished' });
+  res.status(200).json({ message: 'Finished' });
 });
 
 export default router;
