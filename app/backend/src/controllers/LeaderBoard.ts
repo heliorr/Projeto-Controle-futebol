@@ -7,4 +7,9 @@ export default class LeaderBoardController {
     const result = await this._LeaderBoardService.findLeaderBoardHome();
     return { code: 200, value: result };
   };
+
+  public findLeaderBoardAway = async () => {
+    const result = await this._LeaderBoardService.findLeaderBoardAway();
+    return { code: 200, value: result };
+  };
 }

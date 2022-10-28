@@ -9,4 +9,9 @@ router.get('/home', async (req, res) => {
   return res.status(code).json(value);
 });
 
+router.get('/away', async (req, res) => {
+  const { code, value } = await leaderBoardController.findLeaderBoardAway();
+  return res.status(code).json(value);
+});
+
 export default router;
