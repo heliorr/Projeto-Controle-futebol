@@ -35,7 +35,7 @@ router.post('/', valitadeToken, valitade.valitadeMatch, valitade.valitadeTeam, a
   res.status(code).json(value);
 });
 
-router.put('/:id', valitadeToken, async (req, res) => {
+router.patch('/:id', valitadeToken, async (req, res) => {
   const {
     id,
   } = req.params;
